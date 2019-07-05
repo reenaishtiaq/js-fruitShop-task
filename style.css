@@ -10,6 +10,7 @@ h1 {
     justify-content: center;
     letter-spacing: 4px;
     font-size: 35px;
+    margin: 1px 0;
 }
 #my-rupes {
     background-color: white;
@@ -133,3 +134,5 @@ button {
     }
 
 }
+
+
