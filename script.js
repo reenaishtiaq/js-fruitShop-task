@@ -1,95 +1,103 @@
 
-var myAccount = 0;
-var rupes = 0;
-var totalBill = 0;
-var appleNumber = 0;
-var orangeNumber = 0;
-var bananaNumber = 0;
+// var rupes = 0;
+// var myAccount;
+// var totalBill = 0;
+// var appleNumber = 0;
+// var orangeNumber = 0;
+// var bananaNumber = 0;
+
+function makeBill() {
+    let appleNumber = parseInt(document.querySelector('#apple').value) * 10;
+    let orangeNumber = parseInt(document.querySelector('#orange').value) * 15;
+    let bananaNumber = parseInt(document.querySelector('#banana').value) * 7;
+    let totalBill = parseInt(document.querySelector("#bill").value);
+
+    totalBill = appleNumber + orangeNumber + bananaNumber;
+    document.querySelector("#bill").value = totalBill;
+}
 
 function plusNumber() {
-    // 1. Get the value of input which have id "account"
-    // 2. Get the value of input which have id "bill"
-    // 3. Get the value of input which have id "apple"
+
+    let myAccount = parseInt(document.querySelector("#account").value);
+    let appleNumber = parseInt(document.querySelector('#apple').value);
+    let totalBill = parseInt(document.querySelector("#bill").value);
 
 
-    document.querySelector("#account").value;
-    document.querySelector("#bill").value = totalBill;
-    document.querySelector('#apple').value = appleNumber;
-
-
-    if (myAccount > 10) {
+    if (myAccount < totalBill + 10) {
         alert("You don't have sufficient money");
     } else {
-        appleNumber += 1;
-        rupes += 10;
-        myAccount = myAccount - rupes;
-        totalBill = 10 * appleNumber;
+        document.querySelector('#apple').value = ++appleNumber;
     }
+    makeBill();
 }
 
 function minusNumber() {
-    document.querySelector("#bill").value = totalBill;
-    document.querySelector('#apple').value = appleNumber;
-    if (totalBill > 0) {
-        appleNumber = appleNumber - 1;
-        rupes -= 10;
-        myAccount = myAccount + rupes;
-        totalBill = +rupes;
+    let myAccount = parseInt(document.querySelector("#account").value);
+    let appleNumber = parseInt(document.querySelector('#apple').value);
+
+
+    if (appleNumber == 0) {
+        alert("You don't have any Apples");
+    } else {
+        document.querySelector('#apple').value = --appleNumber;
     }
+    makeBill();
 }
 
 
 function addNumber() {
-    document.querySelector("#account").value;
-    document.querySelector("#bill").value = totalBill;
-    document.querySelector('#orange').value = orangeNumber;
+    let myAccount = parseInt(document.querySelector("#account").value);
+    let orangeNumber = parseInt(document.querySelector('#orange').value);
+    let totalBill = parseInt(document.querySelector("#bill").value);
 
-    if (myAccount > 10) {
+
+    if (myAccount < totalBill + 15) {
         alert("You don't have sufficient money");
     } else {
-        orangeNumber += 1;
-        rupes += 15;
-        myAccount = myAccount - rupes;
-        totalBill = 15 * orangeNumber;
+        document.querySelector('#orange').value = ++orangeNumber;
     }
+    makeBill();
 }
 
 function substNumber() {
-    document.querySelector("#bill").value = totalBill;
-    document.querySelector('#orange').value = orangeNumber;
-    if (totalBill > 0) {
-        orangeNumber = orangeNumber - 1;
-        rupes -= 15;
-        myAccount = myAccount + rupes;
-        totalBill = +rupes;
+    let myAccount = parseInt(document.querySelector("#account").value);
+    let orangeNumber = parseInt(document.querySelector('#orange').value);
+
+
+    if (orangeNumber == 0) {
+        alert("You don't have any Oranges");
+    } else {
+        document.querySelector('#orange').value = --orangeNumber;
     }
+    makeBill();
 }
 
 function plsNumber() {
-    document.querySelector("#account").value;
-    document.querySelector("#bill").value = totalBill;
-    document.querySelector('#banana').value = bananaNumber;
+    let myAccount = parseInt(document.querySelector("#account").value);
+    let bananaNumber = parseInt(document.querySelector('#banana').value);
+    let totalBill = parseInt(document.querySelector("#bill").value);
 
-    if (myAccount > 10) {
+
+    if (myAccount < totalBill + 7) {
         alert("You don't have sufficient money");
     } else {
-        bananaNumber += 1;
-        rupes += 7;
-        myAccount = myAccount - rupes;
-        totalBill = 7 * bananaNumber;
+        document.querySelector('#banana').value = ++bananaNumber;
     }
+    makeBill();
 }
 
-function mnsNumber() {
-    document.querySelector("#bill").value = totalBill;
-    document.querySelector('#banana').value = bananaNumber;
 
-    if (totalBill > 0) {
-        bananaNumber = bananaNumber - 1;
-        rupes -= 7;
-        myAccount = myAccount + rupes;
-        totalBill = +rupes;
+function mnsNumber() {
+    let myAccount = parseInt(document.querySelector("#account").value);
+    let bananaNumber = parseInt(document.querySelector('#banana').value);
+
+
+    if (bananaNumber == 0) {
+        alert("You don't have any Bananas");
+    } else {
+        document.querySelector('#banana').value = --bananaNumber;
     }
+    makeBill();
 }
 
 
